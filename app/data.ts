@@ -65,6 +65,15 @@ export const PROJECTS: Project[] = [
     ],
     id: 'project2',
   },
+  {
+    name: 'ERP | Company: Cebu Iceman Corp.',
+    description: 'Custom ERP solution designed for Cebu Iceman, an ice supply company in Cebu, PH. Built with .NET, WinForms, and SQL Server to manage core business processes including inventory, payments, delivery tracking, accounting, sales, and job orders. Streamlined workflows and centralized data for efficient operations.',
+    link: '',
+    images: [
+      '/img/iceman.jpg',
+    ],
+    id: 'project3',
+  },
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
