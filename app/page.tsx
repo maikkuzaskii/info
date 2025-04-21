@@ -1,4 +1,5 @@
 'use client'
+import React, { useState } from 'react'
 import { motion } from 'motion/react'
 import { XIcon } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
@@ -20,6 +21,14 @@ import {
   SOCIAL_LINKS,
 } from './data'
 
+import Lightbox from 'yet-another-react-lightbox'
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails'
+import Zoom from 'yet-another-react-lightbox/plugins/zoom'
+
+import 'yet-another-react-lightbox/styles.css'
+import 'yet-another-react-lightbox/plugins/thumbnails.css'
+
+
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
   visible: {
@@ -39,53 +48,30 @@ const TRANSITION_SECTION = {
   duration: 0.3,
 }
 
-type ProjectVideoProps = {
-  src: string
+type ProjectImagesProps = {
+  images: string[]
 }
 
-function ProjectVideo({ src }: ProjectVideoProps) {
+export function ProjectImages({ images }: ProjectImagesProps) {
+  const [open, setOpen] = useState(false)
+
   return (
-    <MorphingDialog
-      transition={{
-        type: 'spring',
-        bounce: 0,
-        duration: 0.3,
-      }}
-    >
-      <MorphingDialogTrigger>
-        <video
-          src={src}
-          autoPlay
-          loop
-          muted
-          className="aspect-video w-full cursor-zoom-in rounded-xl"
-        />
-      </MorphingDialogTrigger>
-      <MorphingDialogContainer>
-        <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
-          <video
-            src={src}
-            autoPlay
-            loop
-            muted
-            className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh]"
-          />
-        </MorphingDialogContent>
-        <MorphingDialogClose
-          className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
-          variants={{
-            initial: { opacity: 0 },
-            animate: {
-              opacity: 1,
-              transition: { delay: 0.3, duration: 0.1 },
-            },
-            exit: { opacity: 0, transition: { duration: 0 } },
-          }}
-        >
-          <XIcon className="h-5 w-5 text-zinc-500" />
-        </MorphingDialogClose>
-      </MorphingDialogContainer>
-    </MorphingDialog>
+    <>
+      <img
+        src={images[0]}
+        alt="Project preview"
+        className="rounded-md h-[180px] w-full object-cover cursor-pointer hover:scale-105 transition-transform"
+        onClick={() => setOpen(true)}
+      />
+
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        index={0}
+        slides={images.map((src) => ({ src }))}
+        plugins={[Thumbnails, Zoom]}
+      />
+    </>
   )
 }
 
@@ -137,8 +123,9 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            Focused on creating intuitive and performant web experiences.
-            Bridging the gap between design and development.
+            Focused on building robust, scalable, and intuitive web & native applications. 
+            Experienced in delivering well-crafted systems that balance performance with user-centered design.
+            Passionate about bridging the gap between backend architecture and front-end usability.
           </p>
         </div>
       </motion.section>
@@ -147,12 +134,12 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
+        <h3 className="mb-5 text-lg font-medium">Featured Projects</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {PROJECTS.map((project) => (
             <div key={project.name} className="space-y-2">
               <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={project.video} />
+                <ProjectImages images={project.images} />
               </div>
               <div className="px-1">
                 <a
@@ -171,6 +158,13 @@ export default function Personal() {
           ))}
         </div>
       </motion.section>
+
+      <div className="flex-1">
+          <p className="text-zinc-600 dark:text-zinc-400">
+            Other systems / projects include inventory, biometric time-keeping (UareU fingerprint reader), and enterprise-grade softwares built with WinForms.
+            Feel free to contact me for the files / samples. 
+          </p>
+      </div>
 
       <motion.section
         variants={VARIANTS_SECTION}
@@ -214,7 +208,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-3 text-lg font-medium">Blog</h3>
+        <h3 className="mb-3 text-lg font-medium">Insights</h3>
         <div className="flex flex-col space-y-0">
           <AnimatedBackground
             enableHover

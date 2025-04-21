@@ -2,7 +2,7 @@ type Project = {
   name: string
   description: string
   link: string
-  video: string
+  images: string[]
   id: string
 }
 
@@ -29,20 +29,40 @@ type SocialLink = {
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Motion Primitives Pro',
-    description:
-      'Advanced components and templates to craft beautiful websites.',
-    link: 'https://pro.motion-primitives.com/',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    name: 'CRM | Company (2mc Global)',
+    description: 'Custom CRM system built to streamline operations with automation and minimal input. Tailored to the business’s exact needs using ASP.NET Core MVC, Bootstrap, JS, and SQL Server. Centralized data using CloudClusters, with role-based authorization using Identity.',
+    link: '',
+    images: [
+      '/img/crmdashboard.jpg',
+      '/img/crmlogin.jpg',
+      '/img/crmadd.jpg',
+      '/img/crmedit.jpg',
+      '/img/crmview.jpg',
+      '/img/crmlogs.jpg',
+      '/img/level.jpg',
+      '/img/status.jpg',
+      '/img/salesowners.jpg',
+      '/img/users.jpg',
+      '/img/notes.jpg',
+    ],
     id: 'project1',
   },
   {
-    name: 'Motion Primitives',
-    description: 'UI kit to make beautiful, animated interfaces.',
-    link: 'https://motion-primitives.com/',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
+    name: 'ERM | Company: Skyline Prime Corp.',
+    description: 'Saves employee records and onboarding details integrated to windows native time-keeping and payroll application, built to match the company’s workflow using ASP.NET Core MVC, Bootstrap, JS, SQL Server, and role-based authorization with Identity.',
+    link: '',
+    images: [
+      '/img/hris2.jpg',
+      '/img/hris1.jpg',
+      '/img/hris3.jpg',
+      '/img/hris4.jpg',
+      '/img/hris5.jpg',
+      '/img/hris6.jpg',
+      '/img/hris7.jpg',
+      '/img/hris8.jpg',
+      '/img/hris9.jpg',
+      '/img/hris10.jpg',
+    ],
     id: 'project2',
   },
 ]
@@ -76,44 +96,36 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    title: 'Exploring the Intersection of Design, AI, and Design Engineering',
-    description: 'How AI is changing the way we design',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
+    title: 'Why I Choose ASP.NET Core MVC Over Other Frameworks — Especially for Identity',
+    description: 'A Practical Look at Why ASP.NET Core Stands Out for Authentication and User Management',
+    link: '/blog/why-i-choose-aspnet-core-mvc-for-identity',
     uid: 'blog-1',
   },
   {
-    title: 'Why I left my job to start my own company',
-    description:
-      'A deep dive into my decision to leave my job and start my own company',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
+    title: '.NET Core for Web Development Over Other Environments',
+    description: 'Choosing Performance, Flexibility, and Scalability for the Long Run',
+    link: '/blog/why-i-pick-dotnet-core-for-web-development',
     uid: 'blog-2',
-  },
-  {
-    title: 'What I learned from my first year of freelancing',
-    description:
-      'A look back at my first year of freelancing and what I learned',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-3',
   },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'Github',
-    link: 'https://github.com/ibelick',
+    link: 'https://github.com/maikkuzaskii',
   },
   {
-    label: 'Twitter',
-    link: 'https://twitter.com/ibelick',
+    label: 'Facebook',
+    link: 'https://www.facebook.com/maikkuzaskii/',
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/ibelick',
+    link: 'https://www.linkedin.com/in/mike-francis-cabatino-91647b2b0/',
   },
   {
     label: 'Instagram',
-    link: 'https://www.instagram.com/ibelick',
+    link: 'https://www.instagram.com/maikkuzaskii/',
   },
 ]
 
-export const EMAIL = 'your@email.com'
+export const EMAIL = 'mikecabatino@gmail.com'
