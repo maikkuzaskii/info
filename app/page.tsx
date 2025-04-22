@@ -52,7 +52,7 @@ type ProjectImagesProps = {
   images: string[]
 }
 
-export function ProjectImages({ images }: ProjectImagesProps) {
+function ProjectImages({ images }: ProjectImagesProps) {
   const [open, setOpen] = useState(false)
 
   return (
