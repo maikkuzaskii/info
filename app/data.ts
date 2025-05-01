@@ -30,7 +30,7 @@ type SocialLink = {
 export const PROJECTS: Project[] = [
   {
     name: 'CRM | Company (2mc Global)',
-    description: 'Custom CRM system built to streamline operations with automation and minimal input. Tailored to the business’s exact needs using ASP.NET Core MVC, Bootstrap, JS, and SQL Server. Centralized data using CloudClusters, with role-based authorization using Identity.',
+    description: 'Custom CRM system built to streamline operations with automation and minimal input. Tailored to the business’s exact needs using WINFORMS & ASP.NET Core MVC, Bootstrap, JS, and SQL Server. Centralized data using CloudClusters, with role-based authorization using Identity.',
     link: '',
     images: [
       '/img/crmdashboard.jpg',
@@ -49,7 +49,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'ERM | Company: Skyline Prime Corp.',
-    description: 'Saves employee records and onboarding details integrated to windows native time-keeping and payroll application, built to match the company’s workflow using ASP.NET Core MVC, Bootstrap, JS, SQL Server, and role-based authorization with Identity.',
+    description: 'Saves employee records and onboarding details integrated to windows native WINFORMS for time-keeping and payroll application, built to match the company’s workflow using ASP.NET Core MVC, Bootstrap, JS, SQL Server, and role-based authorization with Identity.',
     link: '',
     images: [
       '/img/hris2.jpg',
