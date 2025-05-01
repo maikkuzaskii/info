@@ -29,7 +29,7 @@ type SocialLink = {
 
 export const PROJECTS: Project[] = [
   {
-    name: 'CRM | Company (2mc Global)',
+    name: 'CRM | Company: 2mc Global',
     description: 'Custom CRM system built to streamline operations with automation and minimal input. Tailored to the business’s exact needs using WINFORMS & ASP.NET Core MVC, Bootstrap, JS, and SQL Server. Centralized data using CloudClusters, with role-based authorization using Identity.',
     link: '',
     images: [
