@@ -86,7 +86,7 @@ export function Header() {
           className="text-zinc-600 dark:text-zinc-500"
           delay={0.5}
         >
-          Tech Stack (ASP.Net core MVC, .Net Web API, JavaScript, SQL)
+          .NET Developer (Can also work with React / Next JS / Angular)
         </TextEffect>
       </div>
     </header>
