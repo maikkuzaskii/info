@@ -24,7 +24,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
   {
     name: 'NF Construction ERP',
     subtitle: 'Construction operations, subcontractor, contract & project management platform',
-    description: 'A full-stack construction ERP designed around the real operating workflow of a general contractor. The platform centralizes clients, projects, project-specific scopes of work, subcontractors, proposals and contracts, commercial terms, approvals, project progress, financial visibility, and subcontractor performance. It also provides a dedicated subcontractor portal for reviewing opportunities, negotiating proposal terms, accepting or declining work, and maintaining a clear history of project participation. Credentials: Mike.thxgn@gmail.com | Test@123',
+    description: 'A full-stack construction ERP designed around the real operating workflow of a general contractor. The platform centralizes clients, projects, project-specific scopes of work, subcontractors, proposals and contracts, commercial terms, approvals, project progress, financial visibility, and subcontractor performance. It also provides a dedicated subcontractor portal for reviewing opportunities, negotiating proposal terms, accepting or declining work, and maintaining a clear history of project participation.\n\nCredentials:\nMike.thxgn@gmail.com\nTest@123',
     link: 'https://construction-erp-plob.onrender.com/',
     stack: ['React', '.NET API', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Render'],
     features: [
