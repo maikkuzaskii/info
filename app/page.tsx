@@ -4,6 +4,7 @@ import { motion } from 'motion/react'
 import { ExternalLink } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
+import { FeaturedProjectDetails } from '@/components/featured-project-details'
 import { FEATURED_PROJECTS, OTHER_PROJECTS, EMAIL, SOCIAL_LINKS } from './data'
 import Lightbox from 'yet-another-react-lightbox'
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails'
@@ -30,14 +31,7 @@ export default function Personal() {
 
     <motion.section variants={VARIANTS_SECTION} transition={TRANSITION_SECTION}>
       <div className="mb-5"><h3 className="text-lg font-medium">Featured Projects</h3><p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">Recent full-stack systems built around real business operations.</p></div>
-      {FEATURED_PROJECTS.map((project) => <article key={project.id} className="overflow-hidden rounded-2xl border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
-        <div className="border-b border-zinc-200 bg-zinc-50/60 p-6 dark:border-zinc-800 dark:bg-zinc-900/40 md:p-8">
-          <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between"><div className="max-w-2xl"><p className="text-sm text-zinc-500 dark:text-zinc-400">{project.subtitle}</p><h4 className="mt-2 text-2xl font-semibold tracking-tight">{project.name}</h4><p className="mt-4 whitespace-pre-line leading-7 text-zinc-600 dark:text-zinc-400">
-  {project.description}
-</p></div><a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-zinc-950 px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-80 dark:bg-zinc-100 dark:text-zinc-950">Try Live Demo <ExternalLink className="h-4 w-4" /></a></div>
-        </div>
-        <div className="grid gap-8 p-6 md:grid-cols-[1.25fr_.75fr] md:p-8"><div><p className="mb-3 text-sm font-medium">What the system handles</p><div className="grid gap-2 sm:grid-cols-2">{project.features.map((feature) => <div key={feature} className="rounded-xl border border-zinc-200 px-3 py-2.5 text-sm text-zinc-600 dark:border-zinc-800 dark:text-zinc-400">{feature}</div>)}</div></div><div><p className="mb-3 text-sm font-medium">Technology</p><div className="flex flex-wrap gap-2">{project.stack.map((item) => <span key={item} className="rounded-full bg-zinc-100 px-3 py-1 text-xs text-zinc-700 dark:bg-zinc-900 dark:text-zinc-300">{item}</span>)}</div><div className="mt-6 rounded-xl border border-zinc-200 bg-zinc-100 p-4 dark:border-zinc-800 dark:bg-zinc-900"><p className="text-sm font-semibold">Interactive Demo Access</p><p className="mt-1 text-xs leading-5 text-zinc-500">Open the live system to explore the Construction ERP demo. Demo login details are provided on the login screen.</p><a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1 text-sm font-medium underline underline-offset-4">Open demo <ExternalLink className="h-3.5 w-3.5" /></a></div></div></div>
-      </article>)}
+      {FEATURED_PROJECTS.map((project) => <FeaturedProjectDetails key={project.id} project={project} />)}
     </motion.section>
 
     <motion.section variants={VARIANTS_SECTION} transition={TRANSITION_SECTION}>
@@ -52,3 +46,4 @@ export default function Personal() {
     <motion.section variants={VARIANTS_SECTION} transition={TRANSITION_SECTION}><h3 className="mb-5 text-lg font-medium">Connect</h3><p className="mb-5 text-zinc-600 dark:text-zinc-400">Feel free to contact me at <a className="underline dark:text-zinc-300" href={`mailto:${EMAIL}`}>{EMAIL}</a></p><div className="flex flex-wrap items-center gap-3">{SOCIAL_LINKS.map((link) => <MagneticSocialLink key={link.label} link={link.link}>{link.label}</MagneticSocialLink>)}</div></motion.section>
   </motion.main>
 }
+

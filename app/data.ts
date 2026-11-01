@@ -13,6 +13,9 @@ export type FeaturedProject = {
   link: string
   stack: string[]
   features: string[]
+  modules: { name: string; description: string }[]
+  credentials: { email: string; password: string }
+  screenshots: { src: string; title: string }[]
   id: string
 }
 
@@ -22,26 +25,305 @@ type SocialLink = { label: string; link: string }
 
 export const FEATURED_PROJECTS: FeaturedProject[] = [
   {
-    name: 'NF Construction ERP',
-    subtitle: 'Construction operations, subcontractor, contract & project management platform',
-    description: 'A full-stack construction ERP designed around the real operating workflow of a general contractor. The platform centralizes clients, projects, project-specific scopes of work, subcontractors, proposals and contracts, commercial terms, approvals, project progress, financial visibility, and subcontractor performance. It also provides a dedicated subcontractor portal for reviewing opportunities, negotiating proposal terms, accepting or declining work, and maintaining a clear history of project participation.\n\nCredentials:\nMike.thxgn@gmail.com\nTest@123',
-    link: 'https://construction-erp-plob.onrender.com/',
-    stack: ['React', '.NET API', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Render'],
-    features: [
-      'Client and project management',
-      'Project-specific Scope of Work (SOW)',
-      'Subcontractor directory and performance history',
-      'Proposal, negotiation and contract workflows',
-      'Editable quantity, rate and contract terms per proposal',
-      'Subcontractor approval / decline with reasons',
-      'Progress and project financial tracking',
-      'Completed, delayed and deserted-work history',
-      'Replacement subcontractor / takeover workflow',
-      'Role-based GC and subcontractor access',
-      'Dedicated subcontractor portal',
+    "name": "Construction ERP System",
+    "subtitle": "Built for a US-based construction company that accepts insurance as payees.",
+    "description": "A full-stack construction ERP system built for a US-based construction company that accepts insurance as payees. It brings job intake, assessments, estimates, contracts, project delivery, purchasing, inventory, billing, collections, and accounting into one connected workspace.",
+    "link": "https://nfconstructionerp.onrender.com/",
+    "stack": [
+      "React",
+      ".NET API",
+      "Supabase",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Render"
     ],
-    id: 'construction-erp',
+    "features": [
+      "Dashboard",
+      "Employee tasks",
+      "Team calendar",
+      "Task board",
+      "Client records",
+      "Job intake and assessment",
+      "Assessment reports / Dictation",
+      "Estimates and quotations",
+      "Client contracts",
+      "Project management",
+      "Scope of work",
+      "Construction schedules",
+      "Field updates and inspections",
+      "Budgets and expenses",
+      "Approvals and additional work",
+      "Purchasing",
+      "Material deliveries",
+      "Material inventory",
+      "Tools and equipment",
+      "Fleet and servicing",
+      "Suppliers and subcontractors",
+      "Client billing and collections",
+      "Accounting records",
+      "Documents and reports",
+      "Project completion",
+      "User access",
+      "Search and built-in guidance"
+    ],
+    "modules": [
+      {
+        "name": "Dashboard",
+        "description": "See collections, project spending, unpaid client invoices, project status, and items needing attention. Review activity for today, this week, this month, or this year."
+      },
+      {
+        "name": "Employee tasks",
+        "description": "Assign work to employees, set priorities and deadlines, and follow up on overdue tasks."
+      },
+      {
+        "name": "Team calendar",
+        "description": "Organize internal meetings, appointments, and company events."
+      },
+      {
+        "name": "Task board",
+        "description": "Move employee tasks through To do, In progress, Waiting, and Done so everyone can see their status."
+      },
+      {
+        "name": "Client records",
+        "description": "Keep client information and their related job requests together."
+      },
+      {
+        "name": "Job intake and assessment",
+        "description": "Record requested work, site details, assessment findings, documents, and the next action needed before a job becomes a project."
+      },
+      {
+        "name": "Assessment reports / Dictation",
+        "description": "Turn entered room-by-room findings into a formatted report with photos, recommendations, and a PDF output for review."
+      },
+      {
+        "name": "Estimates and quotations",
+        "description": "Prepare prices for materials, labor, equipment, and subcontract work. Produce client proposals and record acceptance, rejection, or requests for changes."
+      },
+      {
+        "name": "Client contracts",
+        "description": "Prepare contract details and keep signed copies, payment terms, and required deposit evidence together."
+      },
+      {
+        "name": "Project management",
+        "description": "Keep each project’s approved work, costs, schedule, documents, billing, and updates in one workspace."
+      },
+      {
+        "name": "Scope of work",
+        "description": "Break the approved job into clear work items, quantities, and areas so the team knows what needs to be delivered."
+      },
+      {
+        "name": "Construction schedules",
+        "description": "Plan work dates, assign responsible people, link tasks that depend on each other, and compare planned versus actual progress."
+      },
+      {
+        "name": "Field updates and inspections",
+        "description": "Record daily site activity, manpower, problems, delays, safety notes, and inspection results."
+      },
+      {
+        "name": "Budgets and expenses",
+        "description": "Set internal spending plans, record expenses and receipts, and compare budgets with committed and posted costs."
+      },
+      {
+        "name": "Approvals and additional work",
+        "description": "Review purchase orders, expenses, client billing, and requests for changes or extra work."
+      },
+      {
+        "name": "Purchasing",
+        "description": "Maintain a material catalog, prepare purchase orders, obtain approval, and print orders for suppliers."
+      },
+      {
+        "name": "Material deliveries",
+        "description": "Record what arrived, where it was delivered, who received it, and any damaged or rejected items, with supporting photos or documents."
+      },
+      {
+        "name": "Material inventory",
+        "description": "Track stock by location, materials issued to projects, unused returns, transfers, and low-stock alerts."
+      },
+      {
+        "name": "Tools and equipment",
+        "description": "Record individual assets, who checked them out, expected return dates, and their condition when returned."
+      },
+      {
+        "name": "Fleet and servicing",
+        "description": "Track vehicle custody, mileage, recorded fuel quantities, maintenance history, and service or repair needs."
+      },
+      {
+        "name": "Suppliers and subcontractors",
+        "description": "Keep business contacts, supplier and subcontractor roles, project agreements, and supporting records organized."
+      },
+      {
+        "name": "Client billing and collections",
+        "description": "Prepare progress billings based on verified work, issue invoices, record money received, and track unpaid balances and retention."
+      },
+      {
+        "name": "Accounting records",
+        "description": "Review posted invoices, collections, journal entries, and account balances."
+      },
+      {
+        "name": "Documents and reports",
+        "description": "Store project files and photos, find supporting documents, and export supported reports to CSV or PDF."
+      },
+      {
+        "name": "Project completion",
+        "description": "Track remaining work, punch-list items, and warranty issues."
+      },
+      {
+        "name": "User access",
+        "description": "Decide which modules and pages each employee can see, and whether they can add, edit, delete, approve, or post records. Disable access when needed."
+      },
+      {
+        "name": "Search and built-in guidance",
+        "description": "Quickly find modules, projects, clients, and intakes, with guides explaining how to use the system."
+      }
+    ],
+    "credentials": {
+      "email": "Mike.thxgn@gmail.com",
+      "password": "Test@123"
+    },
+    "screenshots": [
+  {
+    "src": "/img/construction-erp/01-dashboard.jpg",
+    "title": "Dashboard"
   },
+  {
+    "src": "/img/construction-erp/02-employee-tasks.jpg",
+    "title": "Employee Tasks"
+  },
+  {
+    "src": "/img/construction-erp/03-team-calendar.jpg",
+    "title": "Team Calendar"
+  },
+  {
+    "src": "/img/construction-erp/04-task-board.jpg",
+    "title": "Task Board"
+  },
+  {
+    "src": "/img/construction-erp/05-inventory-overview.jpg",
+    "title": "Inventory Overview"
+  },
+  {
+    "src": "/img/construction-erp/06-material-inventory.jpg",
+    "title": "Material Inventory"
+  },
+  {
+    "src": "/img/construction-erp/07-tools-equipment.jpg",
+    "title": "Tools Equipment"
+  },
+  {
+    "src": "/img/construction-erp/08-fleet.jpg",
+    "title": "Fleet"
+  },
+  {
+    "src": "/img/construction-erp/09-servicing.jpg",
+    "title": "Servicing"
+  },
+  {
+    "src": "/img/construction-erp/10-project-directory.jpg",
+    "title": "Project Directory"
+  },
+  {
+    "src": "/img/construction-erp/11-project-overview.jpg",
+    "title": "Project Overview"
+  },
+  {
+    "src": "/img/construction-erp/12-scope-of-work.jpg",
+    "title": "Scope Of Work"
+  },
+  {
+    "src": "/img/construction-erp/13-client-contracts.jpg",
+    "title": "Client Contracts"
+  },
+  {
+    "src": "/img/construction-erp/14-billing-collections.jpg",
+    "title": "Billing Collections"
+  },
+  {
+    "src": "/img/construction-erp/15-project-completion.jpg",
+    "title": "Project Completion"
+  },
+  {
+    "src": "/img/construction-erp/16-construction-schedules.jpg",
+    "title": "Construction Schedules"
+  },
+  {
+    "src": "/img/construction-erp/17-field-updates-inspections.jpg",
+    "title": "Field Updates Inspections"
+  },
+  {
+    "src": "/img/construction-erp/18-estimates-quotations.jpg",
+    "title": "Estimates Quotations"
+  },
+  {
+    "src": "/img/construction-erp/19-budgets-costs.jpg",
+    "title": "Budgets Costs"
+  },
+  {
+    "src": "/img/construction-erp/20-expenses-receipts.jpg",
+    "title": "Expenses Receipts"
+  },
+  {
+    "src": "/img/construction-erp/21-approvals-additional-work.jpg",
+    "title": "Approvals Additional Work"
+  },
+  {
+    "src": "/img/construction-erp/22-purchasing.jpg",
+    "title": "Purchasing"
+  },
+  {
+    "src": "/img/construction-erp/23-material-deliveries.jpg",
+    "title": "Material Deliveries"
+  },
+  {
+    "src": "/img/construction-erp/24-accounting.jpg",
+    "title": "Accounting"
+  },
+  {
+    "src": "/img/construction-erp/25-client-records.jpg",
+    "title": "Client Records"
+  },
+  {
+    "src": "/img/construction-erp/26-job-intake-assessment.jpg",
+    "title": "Job Intake Assessment"
+  },
+  {
+    "src": "/img/construction-erp/27-assessment-reports-dictation.jpg",
+    "title": "Assessment Reports Dictation"
+  },
+  {
+    "src": "/img/construction-erp/28-suppliers-business-partners.jpg",
+    "title": "Suppliers Business Partners"
+  },
+  {
+    "src": "/img/construction-erp/29-subcontractors.jpg",
+    "title": "Subcontractors"
+  },
+  {
+    "src": "/img/construction-erp/30-user-access.jpg",
+    "title": "User Access"
+  },
+  {
+    "src": "/img/construction-erp/31-documents.jpg",
+    "title": "Documents"
+  },
+  {
+    "src": "/img/construction-erp/32-reports.jpg",
+    "title": "Reports"
+  },
+  {
+    "src": "/img/construction-erp/33-settings.jpg",
+    "title": "Settings"
+  },
+  {
+    "src": "/img/construction-erp/34-global-search.jpg",
+    "title": "Global Search"
+  },
+  {
+    "src": "/img/construction-erp/35-built-in-guidance.jpg",
+    "title": "Built In Guidance"
+  }
+],
+    "id": "construction-erp"
+  }
 ]
 
 export const OTHER_PROJECTS: Project[] = [
@@ -87,3 +369,4 @@ export const SOCIAL_LINKS: SocialLink[] = [
 ]
 
 export const EMAIL = 'mikecabatino@gmail.com'
+
